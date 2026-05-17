@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLY | Confecciones</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header>
+        <div class="nav-top">
+            <p>Envíos gratis en pedidos mayores a S/500 | Tel: 555-123-456</p>
+        </div>
+        
+        <nav class="nav-main">
+            <div class="nav-left">
+                <a href="index.html" class="logo-container">
+                    <img src="Imagenes/Logo (1).png" alt="Logo Yoly" class="main-logo">
+                </a>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#catalogo" class="nav-link dropdown-toggle">
+                        Ropa deportiva <span class="arrow">&gt;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="back-btn"><span class="arrow">&lt;</span> Volver al menú principal</li>
+                        <li><a href="#">Catálogo 1</a></li>
+                        <li><a href="#">Catálogo 2</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="Buzos.html" class="nav-link active">Buzos</a></li>
+                
+                <li class="dropdown">
+                    <a href="#catalogo" class="nav-link dropdown-toggle">
+                    Ropa Industrial <span class="arrow">&gt;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="back-btn"><span class="arrow">&lt;</span> Volver al menú principal</li>
+                        <li><a href="#">Catálogo 1</a></li>
+                        <li><a href="#">Catálogo 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="cuidado.html" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="school-section" id="buzos-colegio">
+        <div class="section-title">
+            <h2>Escoge tu colegio</h2>
+            <p>Selecciona tu institución institucional para ver los modelos disponibles</p>
+        </div>
+
+        <div class="school-selector-wrapper">
+            <button class="school-nav-btn prev" onclick="moveSchoolCarousel(-1)">&#10094;</button>
+            
+            <div class="school-carousel" id="schoolCarousel">
+                <div class="school-badge active" data-school="all" onclick="filterSchool('all', this)">Todos los Colegios</div>
+                <div class="school-badge" data-school="san-juan" onclick="filterSchool('san-juan', this)">Colegio San Juan</div>
+                <div class="school-badge" data-school="claretiano" onclick="filterSchool('claretiano', this)">Colegio Claretiano</div>
+                <div class="school-badge" data-school="santa-rosa" onclick="filterSchool('santa-rosa', this)">I.E. Santa Rosa</div>
+                <div class="school-badge" data-school="guadalupe" onclick="filterSchool('guadalupe', this)">Colegio Guadalupe</div>
+                <div class="school-badge" data-school="narvaez" onclick="filterSchool('narvaez', this)">I.E. Rafael Narváez</div>
+                <div class="school-badge" data-school="all" onclick="filterSchool('all', this)">Todos los Colegios</div>
+                <div class="school-badge" data-school="san-juan" onclick="filterSchool('san-juan', this)">Colegio San Juan</div>
+                <div class="school-badge" data-school="claretiano" onclick="filterSchool('claretiano', this)">Colegio Claretiano</div>
+                <div class="school-badge" data-school="santa-rosa" onclick="filterSchool('santa-rosa', this)">I.E. Santa Rosa</div>
+                <div class="school-badge" data-school="guadalupe" onclick="filterSchool('guadalupe', this)">Colegio Guadalupe</div>
+                <div class="school-badge" data-school="narvaez" onclick="filterSchool('narvaez', this)">I.E. Rafael Narváez</div>
+            </div>
+            
+            <button class="school-nav-btn next" onclick="moveSchoolCarousel(1)">&#10095;</button>
+        </div>
+
+        <div class="school-products-grid" id="schoolProductsGrid">
+            
+            <div class="product-card-item school-card" data-school-group="san-juan">
+                <img src="Imagenes/P1.png" alt="Buzo San Juan">
+                <div class="product-info">
+                    <div class="row-1">YOLY | Colegios</div>
+                    <div class="row-2">
+                        <h3>Buzo San Juan</h3>
+                        <span class="price">S/130.00</span>
+                    </div>
+                    <div class="row-3">
+                        <button class="btn-order" onclick="openModal('Buzo Completo - San Juan', 'S/130.00')">Pedir por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card-item school-card" data-school-group="claretiano">
+                <img src="Imagenes/P2.jpg" alt="Buzo Claretiano">
+                <div class="product-info">
+                    <div class="row-1">YOLY | Colegios</div>
+                    <div class="row-2">
+                        <h3>Buzo Claretiano</h3>
+                        <span class="price">S/135.00</span>
+                    </div>
+                    <div class="row-3">
+                        <button class="btn-order" onclick="openModal('Buzo Completo - Claretiano', 'S/135.00')">Pedir por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card-item school-card" data-school-group="santa-rosa">
+                <img src="Imagenes/P1.png" alt="Buzo Santa Rosa">
+                <div class="product-info">
+                    <div class="row-1">YOLY | Colegios</div>
+                    <div class="row-2">
+                        <h3>Buzo Santa Rosa</h3>
+                        <span class="price">S/125.00</span>
+                    </div>
+                    <div class="row-3">
+                        <button class="btn-order" onclick="openModal('Buzo Completo - Santa Rosa', 'S/125.00')">Pedir por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card-item school-card" data-school-group="guadalupe">
+                <img src="Imagenes/P2.jpg" alt="Buzo Guadalupe">
+                <div class="product-info">
+                    <div class="row-1">YOLY | Colegios</div>
+                    <div class="row-2">
+                        <h3>Buzo Guadalupe</h3>
+                        <span class="price">S/140.00</span>
+                    </div>
+                    <div class="row-3">
+                        <button class="btn-order" onclick="openModal('Buzo Completo - Guadalupe', 'S/140.00')">Pedir por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modalProductInfo"></div>
+                    
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <label>Tu Nombre</label>
+                            <input type="text" id="clientName" placeholder="Ej: Ana García" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Destinatario</label>
+                            <input type="text" id="recipientName" placeholder="¿Quién recibe?" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Dirección de Entrega</label>
+                            <input type="text" id="address" placeholder="Calle, Número, Colonia" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Fecha y Hora</label>
+                            <input type="datetime-local" id="deliveryDate" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Dedicatoria Personalizada</label>
+                            <textarea id="dedication" placeholder="Escribe un mensaje inolvidable..." rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit-order">Confirmar por WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <footer class="site-footer">
+            <div class="footer-container">
+                
+                <div class="footer-col identity">
+                    <h3>YOLY | Confecciones</h3>
+                    <p class="slogan">"Ropa deportiva, buzos escolares y uniformes industriales"</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">FB</a>
+                        <a href="#" title="Instagram">IG</a>
+                        <a href="#" title="TikTok">TK</a>
+                    </div>
+                </div>
+
+                <div class="footer-col links">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="catalago/rosas.html">Catálogo</a></li>
+                        <li><a href="promociones.html">Promociones</a></li>
+                        <li><a href="vendidos.html">Más Vendidos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact">
+                    <h3>Contáctanos</h3>
+                    <p>📍 Av. Principal 123, Ciudad</p>
+                    <p>📞 WhatsApp: +52 1 555 123 4567</p>
+                    <p>⏰ Lun - Sáb: 9:00 AM - 8:00 PM</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Confecciones Yoly. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+
+   <script src="script.js"></script>
+
+</body>
+</html>
