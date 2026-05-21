@@ -27,28 +27,19 @@
                 
                 <li class="dropdown">
                     <a href="#catalogo" class="nav-link dropdown-toggle">
-                        Ropa deportiva <span class="arrow">&gt;</span>
+                        Sport<span class="arrow">&gt;</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="back-btn"><span class="arrow">&lt;</span> Volver al menú principal</li>
-                        <li><a href="#">Catálogo 1</a></li>
-                        <li><a href="#">Catálogo 2</a></li>
+                        <li><a href="Sport/olimpiadas.html">Olimpiadas</a></li>
+                        <li><a href="Sport/otros.html">Otras Prendas</a></li>
                     </ul>
                 </li>
                 
                 <li><a href="Buzos.html" class="nav-link">Buzos</a></li>
                 
-                <li class="dropdown">
-                    <a href="#catalogo" class="nav-link dropdown-toggle">
-                    Ropa Industrial <span class="arrow">&gt;</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="back-btn"><span class="arrow">&lt;</span> Volver al menú principal</li>
-                        <li><a href="#">Catálogo 1</a></li>
-                        <li><a href="#">Catálogo 2</a></li>
-                    </ul>
-                </li>
-                <li><a href="cuidado.html" class="nav-link">Contacto</a></li>
+                <li><a href="industrial.html" class="nav-link">Ropa Industrial</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
 
             <div class="nav-right">
@@ -116,7 +107,8 @@
             <div class="product-card-item">
                 <img src="Imagenes/P1.png" alt="Buzo Deportivo">
                 <div class="product-info">
-                    <div class="row-1">YOLY | Confecciones</div> <div class="row-2"> <h3>Buzo Deportivo</h3>
+                    <div class="row-1">YOLY | Confecciones</div> 
+                    <div class="row-2"> <h3>Buzo Deportivo</h3>
                         <span class="price">S/120.00</span>
                     </div>
                     <div class="row-3"> <button class="btn-order" onclick="openModal('Buzo Deportivo', 'S/120.00')">Pedir por WhatsApp</button>
@@ -202,29 +194,29 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <div id="modalProductInfo"></div>
             
-            <form id="whatsappForm">
-                <div class="form-group">
-                    <label>Tu Nombre</label>
-                    <input type="text" id="clientName" placeholder="Ej: Ana García" required>
-                </div>
-                <div class="form-group">
-                    <label>Destinatario</label>
-                    <input type="text" id="recipientName" placeholder="¿Quién recibe?" required>
-                </div>
-                <div class="form-group full-width">
-                    <label>Dirección de Entrega</label>
-                    <input type="text" id="address" placeholder="Calle, Número, Colonia" required>
-                </div>
-                <div class="form-group full-width">
-                    <label>Fecha y Hora</label>
-                    <input type="datetime-local" id="deliveryDate" required>
-                </div>
-                <div class="form-group full-width">
-                    <label>Dedicatoria Personalizada</label>
-                    <textarea id="dedication" placeholder="Escribe un mensaje inolvidable..." rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn-submit-order">Confirmar por WhatsApp</button>
-            </form>
+        <form id="whatsappForm">
+            <div>
+                <label for="clientName">Tu Nombre Completo:</label>
+                <input type="text" id="clientName" placeholder="Ej. María Gonzales" required>
+            </div>
+            
+            <div>
+                <label for="quantity">Cantidad de productos:</label>
+                <input type="number" id="quantity" min="1" placeholder="Ej. 2" required>
+            </div>
+            
+            <div class="full-width">
+                <label for="address">Dirección de entrega:</label>
+                <input type="text" id="address" placeholder="Ej. Av. España 123, Trujillo" required>
+            </div>
+            
+            <div class="full-width">
+                <label for="additionalInfo">Información adicional o preguntas:</label>
+                <textarea id="additionalInfo" rows="3" placeholder="Tallas, colores específicos, o dudas..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit-order">Enviar Pedido por WhatsApp</button>
+        </form>
         </div>
     </div>
 

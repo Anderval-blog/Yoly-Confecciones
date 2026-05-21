@@ -40,35 +40,31 @@ function moveCarousel(direction) {
     });
 }
 
-// Evento de envío del formulario
-document.getElementById('whatsappForm').onsubmit = function(e) {
-    e.preventDefault();
-    
-    const client = document.getElementById('clientName').value;
-    const recipient = document.getElementById('recipientName').value;
-    const address = document.getElementById('address').value;
-    const date = document.getElementById('deliveryDate').value;
-    const messageText = document.getElementById('dedication').value;
+// Evento de envío del formulario adaptado para Confecciones (CORREGIDO)
+const whatsappForm = document.getElementById('whatsappForm');
 
-    const fullMessage = `*NUEVO PEDIDO - ROJAS FLORERÍA*\n\n` +
-                        `*Producto:* ${currentProduct}\n` +
-                        `*Cliente:* ${client}\n` +
-                        `*Destinatario:* ${recipient}\n` +
-                        `*Dirección:* ${address}\n` +
-                        `*Fecha/Hora:* ${date}\n` +
-                        `*Dedicatoria:* ${messageText}`;
+if (whatsappForm) {
+    whatsappForm.onsubmit = function(e) {
+        e.preventDefault();
+        
+        const client = document.getElementById('clientName').value;
+        const quantity = document.getElementById('quantity').value; 
+        const address = document.getElementById('address').value;
+        const additionalInfo = document.getElementById('additionalInfo').value; 
 
-    const whatsappUrl = `https://wa.me/51960712178?text=${encodeURIComponent(fullMessage)}`;
-    window.open(whatsappUrl, '_blank');
-};
+        const fullMessage = `*NUEVO PEDIDO - YOLY CONFECCIONES*\n\n` +
+                            `*Producto:* ${currentProduct}\n` +
+                            `*Cliente:* ${client}\n` +
+                            `*Cantidad:* ${quantity} unidades\n` +
+                            `*Dirección:* ${address}\n` +
+                            `*Información adicional/Dudas:* ${additionalInfo ? additionalInfo : 'Ninguna'}`;
 
-// Cerrar modal si se hace clic fuera de él
-window.onclick = function(event) {
-    const modal = document.getElementById('productModal');
-    if (event.target == modal) {
+        const whatsappUrl = `https://wa.me/51960712178?text=${encodeURIComponent(fullMessage)}`;
+        window.open(whatsappUrl, '_blank');
+        
         closeModal();
-    }
-};
+    };
+}
 
 
 // Lógica para las flechas del carrusel de PRODUCTOS
@@ -293,3 +289,28 @@ function filterSchool(schoolTarget, elementSelected) {
         }
     });
 }
+
+
+// Actualización del filtro para Olimpiadas
+function filterGarment(garmentTarget, elementSelected) {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    elementSelected.classList.add('active');
+
+    const olympicCards = document.querySelectorAll('.olympics-products-grid .product-card-item');
+    
+    olympicCards.forEach(card => {
+        const cardGarment = card.getAttribute('data-garment');
+        
+        if (garmentTarget === 'all' || cardGarment === garmentTarget) {
+            // CORRECCIÓN: Se cambia 'block' por 'flex' para mantener la estructura y alineación limpia
+            card.style.display = 'flex'; 
+        } else {
+            card.style.display = 'none'; 
+        }
+    });
+}
+
+
+
+

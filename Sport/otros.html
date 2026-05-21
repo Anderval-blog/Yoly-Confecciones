@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLY | Confecciones</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header>
+        <div class="nav-top">
+            <p>Envíos gratis en pedidos mayores a S/500 | Tel: 555-123-456</p>
+        </div>
+        
+        <nav class="nav-main">
+            <div class="nav-left">
+                <a href="../index.html" class="logo-container">
+                    <img src="../Imagenes/Logo (1).png" alt="Logo Yoly" class="main-logo">
+                </a>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#catalogo" class="nav-link active dropdown-toggle">
+                        Sport<span class="arrow">&gt;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="back-btn"><span class="arrow">&lt;</span> Volver al menú principal</li>
+                        <li><a href="olimpiadas.html">Olimpiadas</a></li>
+                        <li><a href="otros.html">Otras Prendas</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="../Buzos.html" class="nav-link">Buzos</a></li>
+                
+                <li><a href="../industrial.html" class="nav-link">Ropa Industrial</a></li>
+                <li><a href="../contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="olympics-section">
+        <div class="section-title-container" style="text-align: center; margin-bottom: 30px;">
+            <h2>Colección Olimpiadas 2026</h2>
+            <p>Prendas Sport</p>
+        </div>
+
+        <div class="olympics-container">
+            <aside class="olympics-sidebar">
+                <h3>Filtrar por Prenda</h3>
+                <ul class="filter-list">
+                    <li><button class="filter-btn active" onclick="filterGarment('all', this)">Mostrar Todo</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('polo', this)">Polos / Camisetas</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('short', this)">Shorts</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('casaca', this)">Casacas / Buzos</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('conjunto', this)">Conjuntos Completos</button></li>
+                </ul>
+            </aside>
+
+            <div class="olympics-products-grid">
+    
+                <div class="product-card-item" data-garment="polo">
+                    <div class="product-img-wrapper">
+                        <img src="../Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Polo Deportivo</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Polo Deportivo', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="product-card-item" data-garment="short">
+                    <div class="product-img-wrapper">
+                        <img src="../Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Short Deportivo</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Short Deportivo', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card-item" data-garment="casaca">
+                    <div class="product-img-wrapper">
+                        <img src="../Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Casaca Deportiva</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Casaca Deportiva', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modalProductInfo"></div>
+                    
+                    <form id="whatsappForm">
+                        <div>
+                            <label for="clientName">Tu Nombre Completo:</label>
+                            <input type="text" id="clientName" placeholder="Ej. María Gonzales" required>
+                        </div>
+                        
+                        <div>
+                            <label for="quantity">Cantidad de productos:</label>
+                            <input type="number" id="quantity" min="1" placeholder="Ej. 2" required>
+                        </div>
+                        
+                        <div class="full-width">
+                            <label for="address">Dirección de entrega:</label>
+                            <input type="text" id="address" placeholder="Ej. Av. España 123, Trujillo" required>
+                        </div>
+                        
+                        <div class="full-width">
+                            <label for="additionalInfo">Información adicional o preguntas:</label>
+                            <textarea id="additionalInfo" rows="3" placeholder="Tallas, colores específicos, o dudas..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit-order">Enviar Pedido por WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <footer class="site-footer">
+            <div class="footer-container">
+                
+                <div class="footer-col identity">
+                    <h3>YOLY | Confecciones</h3>
+                    <p class="slogan">"Ropa deportiva, buzos escolares y uniformes industriales"</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">FB</a>
+                        <a href="#" title="Instagram">IG</a>
+                        <a href="#" title="TikTok">TK</a>
+                    </div>
+                </div>
+
+                <div class="footer-col links">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="catalago/rosas.html">Catálogo</a></li>
+                        <li><a href="promociones.html">Promociones</a></li>
+                        <li><a href="vendidos.html">Más Vendidos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact">
+                    <h3>Contáctanos</h3>
+                    <p>📍 Av. Principal 123, Ciudad</p>
+                    <p>📞 WhatsApp: +52 1 555 123 4567</p>
+                    <p>⏰ Lun - Sáb: 9:00 AM - 8:00 PM</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Confecciones Yoly. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+
+   <script src="../script.js"></script>
+
+</body>
+</html>

@@ -36,9 +36,9 @@
                     </ul>
                 </li>
                 
-                <li><a href="Buzos.html" class="nav-link active">Buzos</a></li>
+                <li><a href="Buzos.html" class="nav-link">Buzos</a></li>
                 
-                <li><a href="industrial.html" class="nav-link">Ropa Industrial</a></li>
+                <li><a href="industrial.html" class="nav-link active">Ropa Industrial</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
 
@@ -53,93 +53,76 @@
     </header>
 
 
-    <section class="school-section" id="buzos-colegio">
-        <div class="section-title">
-            <h2>Escoge tu colegio</h2>
-            <p>Selecciona tu institución educativa para ver los modelos disponibles</p>
+    <section class="olympics-section">
+        <div class="section-title-container" style="text-align: center; margin-bottom: 30px;">
+            <h2>Colección de Ropa Industrial 2026</h2>
+            <p>Ropa Industrial</p>
         </div>
 
-        <div class="school-selector-wrapper">
-            <button class="school-nav-btn prev" onclick="moveSchoolCarousel(-1)">&#10094;</button>
-            
-            <div class="school-carousel" id="schoolCarousel">
-                <div class="school-badge active" data-school="all" onclick="filterSchool('all', this)">Todos los Colegios</div>
-                <div class="school-badge" data-school="san-juan" onclick="filterSchool('san-juan', this)">Colegio San Juan</div>
-                <div class="school-badge" data-school="claretiano" onclick="filterSchool('claretiano', this)">Colegio Claretiano</div>
-                <div class="school-badge" data-school="santa-rosa" onclick="filterSchool('santa-rosa', this)">I.E. Santa Rosa</div>
-                <div class="school-badge" data-school="guadalupe" onclick="filterSchool('guadalupe', this)">Colegio Guadalupe</div>
-                <div class="school-badge" data-school="narvaez" onclick="filterSchool('narvaez', this)">I.E. Rafael Narváez</div>
-                <div class="school-badge" data-school="all" onclick="filterSchool('all', this)">Todos los Colegios</div>
-                <div class="school-badge" data-school="san-juan" onclick="filterSchool('san-juan', this)">Colegio San Juan</div>
-                <div class="school-badge" data-school="claretiano" onclick="filterSchool('claretiano', this)">Colegio Claretiano</div>
-                <div class="school-badge" data-school="santa-rosa" onclick="filterSchool('santa-rosa', this)">I.E. Santa Rosa</div>
-                <div class="school-badge" data-school="guadalupe" onclick="filterSchool('guadalupe', this)">Colegio Guadalupe</div>
-                <div class="school-badge" data-school="narvaez" onclick="filterSchool('narvaez', this)">I.E. Rafael Narváez</div>
+        <div class="olympics-container">
+            <aside class="olympics-sidebar">
+                <h3>Filtrar por Prenda</h3>
+                <ul class="filter-list">
+                    <li><button class="filter-btn active" onclick="filterGarment('all', this)">Mostrar Todo</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('polo', this)">Polos / Camisetas</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('short', this)">Shorts</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('casaca', this)">Casacas / Buzos</button></li>
+                    <li><button class="filter-btn" onclick="filterGarment('conjunto', this)">Conjuntos Completos</button></li>
+                </ul>
+            </aside>
+
+            <div class="olympics-products-grid">
+    
+                <div class="product-card-item" data-garment="polo">
+                    <div class="product-img-wrapper">
+                        <img src="Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Polo Deportivo</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Polo Deportivo', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="product-card-item" data-garment="short">
+                    <div class="product-img-wrapper">
+                        <img src="Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Short Deportivo</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Short Deportivo', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card-item" data-garment="casaca">
+                    <div class="product-img-wrapper">
+                        <img src="Imagenes/P1.png" alt="Polo Deportivo">
+                    </div>
+                    <div class="product-info">
+                        <div class="row-1">YOLY | Confecciones</div>
+                        <div class="row-2"> <h3>Casaca Deportiva</h3>
+                            <span class="price">S/120.00</span>
+                        </div>
+                        <div class="row-3"> 
+                            <button class="btn-order" onclick="openModal('Casaca Deportiva', 'S/120.00')">Pedir por WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <button class="school-nav-btn next" onclick="moveSchoolCarousel(1)">&#10095;</button>
         </div>
+    </section>
 
-        <div class="school-products-grid" id="schoolProductsGrid">
-            
-            <div class="product-card-item school-card" data-school-group="san-juan">
-                <img src="Imagenes/P1.png" alt="Buzo San Juan">
-                <div class="product-info">
-                    <div class="row-1">YOLY | Colegios</div>
-                    <div class="row-2">
-                        <h3>Buzo San Juan</h3>
-                        <span class="price">S/130.00</span>
-                    </div>
-                    <div class="row-3">
-                        <button class="btn-order" onclick="openModal('Buzo Completo - San Juan', 'S/130.00')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-item school-card" data-school-group="claretiano">
-                <img src="Imagenes/P2.jpg" alt="Buzo Claretiano">
-                <div class="product-info">
-                    <div class="row-1">YOLY | Colegios</div>
-                    <div class="row-2">
-                        <h3>Buzo Claretiano</h3>
-                        <span class="price">S/135.00</span>
-                    </div>
-                    <div class="row-3">
-                        <button class="btn-order" onclick="openModal('Buzo Completo - Claretiano', 'S/135.00')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-item school-card" data-school-group="santa-rosa">
-                <img src="Imagenes/P1.png" alt="Buzo Santa Rosa">
-                <div class="product-info">
-                    <div class="row-1">YOLY | Colegios</div>
-                    <div class="row-2">
-                        <h3>Buzo Santa Rosa</h3>
-                        <span class="price">S/125.00</span>
-                    </div>
-                    <div class="row-3">
-                        <button class="btn-order" onclick="openModal('Buzo Completo - Santa Rosa', 'S/125.00')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card-item school-card" data-school-group="guadalupe">
-                <img src="Imagenes/P2.jpg" alt="Buzo Guadalupe">
-                <div class="product-info">
-                    <div class="row-1">YOLY | Colegios</div>
-                    <div class="row-2">
-                        <h3>Buzo Guadalupe</h3>
-                        <span class="price">S/140.00</span>
-                    </div>
-                    <div class="row-3">
-                        <button class="btn-order" onclick="openModal('Buzo Completo - Guadalupe', 'S/140.00')">Pedir por WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+    
 
             <div id="productModal" class="modal">
                 <div class="modal-content">
