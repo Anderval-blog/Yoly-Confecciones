@@ -71,7 +71,7 @@ if (whatsappForm) {
 function moveProductCarousel(direction) {
     const container = document.getElementById('productCarousel');
     // Obtenemos el ancho de una tarjeta de producto (incluyendo el gap)
-    const cardWidth = container.querySelector('.product-card-item').offsetWidth + 20; 
+    const cardWidth = container.querySelector('.product-card-item-index').offsetWidth + 20; 
     
     container.scrollBy({
         left: direction * cardWidth, // Se mueve exactamente una tarjeta a la vez
